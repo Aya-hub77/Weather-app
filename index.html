@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { 
+      colors: { bgWhite: 'hsl(243, 23%, 24%)', pur: 'hsl(233, 67%, 56%)', offWhite: ' hsl(250, 6%, 84%)', bgPur: "hsl(243, 27%, 20%)", bgB: "hsl(248, 70%, 36%)" } }, 
+      fontFamily: { gro: ["Bricolage Grotesque"] },
+      screens: { media: '800px'}
+      } }</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
