@@ -19,7 +19,6 @@ const Weather = () => {
     const [country, setCountry] = useState("");
     const [search, setSearch] = useState("");
     const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(true);
     useEffect (() => {
         if (!navigator.geolocation) return console.log("Geolocation not supported");
         navigator.geolocation.getCurrentPosition(
@@ -68,15 +67,12 @@ useEffect(() => {
     if (lat != null && lon != null) {
         const fetchWeather = async () => {
             try {
-                setLoading(true);
                 setError(false);
                 const res = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,apparent_temperature,windspeed_10m,precipitation,precipitation_probability,relativehumidity_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,weathercode&timezone=auto`);
                 setWeather(res.data);
             } catch (err) {
                 console.error(err);
                 setError(true);
-            } finally {
-                setLoading(false);
             }
         };
         fetchWeather();
@@ -120,9 +116,6 @@ const dailyForecast = weather?.daily.time.map((day, i) => ({
 }));
     if (error) {
         return <ApiError onRetry={() => window.location.reload()} />;
-    }
-    if (loading || !weather) {
-        return <div className="text-white text-center text-[40px] mt-20">Loading...</div>
     }
    return (
       <section>
