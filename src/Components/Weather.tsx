@@ -129,7 +129,7 @@ const dailyForecast = weather?.daily.time.map((day, i) => ({
       <div className='pb-10 flex flex-col media:justify-center media:flex-row media:gap-6 media:items-center'>
         <div>
             {weather && (
-            <div className="bg-[url('../assets/bg-today-small.png')] media:bg-[url('../assets/bg-today-large.png')] bg-no-repeat bg-cover m-3 flex flex-col py-10 text-white text-center media:flex-row media:justify-between media:items-center media:px-6 media:py-14 media:w-[100%] ">
+            <div className="bg-[url('/bg-today-small.png')] media:bg-[url('/bg-today-large.png')] bg-no-repeat bg-cover m-3 flex flex-col py-10 text-white text-center media:flex-row media:justify-between media:items-center media:px-6 media:py-14 media:w-[100%] ">
                 <div className='flex flex-col'>
                 <h3 className='text-[30px] font-bold'>{city}, {country} </h3>
                 <p className='text-bold text-[20px] text-offWhite'>{today}</p>
